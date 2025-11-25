@@ -1,0 +1,36 @@
+#include <string>
+#include <iostream>
+#include <unistd.h>
+
+int main()
+{
+	std::string	input;
+
+	while (true)
+	{
+		usleep(400000);
+		std::cout << "WELCOME TO YOUR PHONEBOOK" << std::endl;
+		std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~" << std::endl;
+		usleep(900000);
+		std::cout << "WHAT WOULD YOU LIKE TO DO" << std::endl;
+		usleep(900000);
+		std::cout << "ADD      SEARCH      EXIT" << std::endl;
+		if (!std::getline(std::cin, input))
+		{
+			std::cout << std::endl << "NO INPUT DETECTED" << std::endl;
+			break ;
+		}
+		if (input == "ADD")
+			std::cout << "ADD has been selected" << std::endl;
+		else if (input == "SEARCH")
+			std::cout << "SEARCH has been selected" << std::endl;
+		else if (input == "EXIT")
+		{
+			std::cout << "EXIT has been selected" << std::endl;
+			break ;
+		}
+		else
+			std::cout << "COMMAND NOT RECOGNISED. PLEASE TRY AGAIN" << std::endl;
+	}
+	return 0;
+}
