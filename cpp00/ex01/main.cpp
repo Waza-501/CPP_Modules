@@ -14,11 +14,7 @@ int main()
 		std::cout << "WHAT WOULD YOU LIKE TO DO" << std::endl;
 		usleep(400000);
 		std::cout << "ADD      SEARCH      EXIT" << std::endl;
-		if (!std::getline(std::cin, input))
-		{
-			std::cout << std::endl << "NO INPUT DETECTED" << std::endl;
-			break ;
-		}
+		std::getline(std::cin, input);
 		if (input == "ADD")
 			std::cout << "ADD has been selected" << std::endl;
 		else if (input == "SEARCH")
@@ -28,6 +24,8 @@ int main()
 			std::cout << "EXIT has been selected" << std::endl;
 			break ;
 		}
+		else if (std::cin.eof())
+			break ;
 		else
 			std::cout << "COMMAND NOT RECOGNISED. PLEASE TRY AGAIN" << std::endl << std::endl;
 	}

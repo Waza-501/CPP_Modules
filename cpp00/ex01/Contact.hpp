@@ -5,16 +5,18 @@
 class Contact
 {
 	private:
-		std::string FirstName;
-		std::string LastName;
-		std::string Nickname;
-		std::string Number;
-		std::string DarkSecret;
+		std::string firstName;
+		std::string fastName;
+		std::string nickname;
+		std::string number;
+		std::string darksecret;
+		bool		hasinfo;
 	public:
 		Contact();
 		~Contact();
-		void	PrintValue();
-		void	PrintContact();
+		void		setValue(std::string string);
+		std::string	getValue();
+		void		printContact();
 
 };
 

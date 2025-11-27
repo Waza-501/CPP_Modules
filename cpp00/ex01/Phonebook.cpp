@@ -1,12 +1,32 @@
 #include "Phonebook.hpp"
 
 
-Phonebook()
+Phonebook:: Phonebook()
+{
+	index = 0;
+
+
+}
+
+Phonebook:: ~Phonebook()
 {
 	
 }
 
-void	addnewContact()
+void	Phonebook::addnewContact()
 {
-	if ()
+	if (index == 8)
+		index = 0;
+	if (Contact[index].hasinfo == true)
+	
+}
+
+void	Phonebook::searchContacts()
+{
+
+}
+
+void	Phonebook::listContacts()
+{
+
 }
