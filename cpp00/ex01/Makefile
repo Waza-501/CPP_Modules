@@ -3,7 +3,9 @@ CFLAGS =  -Wall -Werror -Wextra -std=c++11
 NAME = phonebook
 
 
-SOURCES		:=	main.cpp\
+SOURCES		:=	Contact.cpp\
+				main.cpp\
+				Phonebook.cpp\
 
 SOURCE_DIR	:= ./
 OBJECTS_DIR	:= objects

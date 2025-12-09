@@ -5,6 +5,7 @@
 
 int main()
 {
+	Phonebook	book;
 	std::string	input;
 
 	while (true)
