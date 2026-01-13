@@ -44,17 +44,40 @@ void	Contact::setContact()
 	return ;
 }
 
+void	Contact::preview(std::string info)
+{
+	if (info.length() > 10)
+	{
+		for (int i = 0; i < 9; i++)
+		{
+			std::cout << std::right << info[i];
+		}
+		std::cout << std::right << ".";
+	}
+	else
+		std::cout << std::setw(10) << info;
+	return ;
+}
+
 void	Contact::previewContact()
 {
-	std::cout << std::setw(10) << this->getFname() << " |";
-	std::cout << std::setw(10) << this->getLname() << " |";
-	std::cout << std::setw(10) << this->getNname() << " |";
-	std::cout << std::setw(10) << this->getNumber() << " |";
-	std::cout << std::setw(10) << this->getSecret() << std::endl;
+	this->preview(this->getFname());
+	std::cout << " | ";
+	this->preview(this->getLname());
+	std::cout << " | ";
+	this->preview(this->getNname());
+	std::cout << " | ";
+	this->preview(this->getNumber());
+	std::cout << std::endl;
 }
 
 void	Contact::printContact()
 {
+	if (this->isfilled() == false)
+	{
+		std::cout << "no contact info found. Maybe try selecting one with information next time :)" << std::endl;
+		return ;
+	}
 	std::cout << this->getFname() << std::endl;
 	std::cout << this->getLname() << std::endl;
 	std::cout << this->getNname() << std::endl;

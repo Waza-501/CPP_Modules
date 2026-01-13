@@ -14,6 +14,7 @@ class Contact
 		std::string number;
 		std::string darksecret;
 		bool		filled = false;
+		void		preview(std::string info);
 	public:
 		Contact();
 		~Contact();

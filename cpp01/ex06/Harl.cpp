@@ -49,32 +49,19 @@ void	Harl::complain(std::string level)
 	switch (idx)
 	{
 		case 0:
-		{
-			for (; idx < 4; idx++)
-				(this->*funcs[idx])();
-			break ;
-		}
-		case 1:
-		{
-			for (; idx < 4; idx++)
-				(this->*funcs[idx])();
-			break ;
-		}
+			(this->*funcs[0])();
+		case 1:	
+			(this->*funcs[1])();
 		case 2:
-		{
-			for (; idx < 4; idx++)
-				(this->*funcs[idx])();
-			break ;
-		}
+			(this->*funcs[2])();
 		case 3:
 		{
-			for (; idx < 4; idx++)
-				(this->*funcs[idx])();
+			(this->*funcs[3])();
 			break ;
 		}
 		case 4:
 		{
-			std::cout << "Surely, he cought his train right?" << std::endl;
+			std::cout << "Don't forget to hydrate!" << std::endl;
 			return ;
 		}
 	}
