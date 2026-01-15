@@ -66,8 +66,6 @@ void	Contact::previewContact()
 	this->preview(this->getLname());
 	std::cout << " | ";
 	this->preview(this->getNname());
-	std::cout << " | ";
-	this->preview(this->getNumber());
 	std::cout << std::endl;
 }
 

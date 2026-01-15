@@ -31,11 +31,11 @@ void	Phonebook::searchContacts()
 			exit(0);
 		try
 		{
-			num = stoi(input);
+			num = std::stoi(input);
 		}
 		catch(...)
 		{
-			std::cerr << "Warning, the input recieved does not match the expected values." << std::endl;
+			std::cerr << "Was I not clear enough about what I expected from you?" << std::endl;
 			exit(0);
 		}
 		if (num < 1 || num > 8)
@@ -52,7 +52,10 @@ void	Phonebook::listContacts()
 
 	while (this->contacts[idx].isfilled() == true)
 	{
+		std::cout << std::setw(10) <<  idx + 1;
+		std::cout << " | ";
 		this->contacts[idx].previewContact();
+		std::cout << std::endl;
 		idx++;
 	}
 	return ;

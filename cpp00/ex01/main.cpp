@@ -1,6 +1,5 @@
 #include <string>
 #include <iostream>
-#include <unistd.h>
 #include "Phonebook.hpp"
 
 int main()
@@ -8,7 +7,6 @@ int main()
 	Phonebook	book;
 	std::string	input;
 
-	usleep(400000);
 	std::cout << "WELCOME TO YOUR PHONEBOOK" << std::endl;
 	while (true)
 	{
@@ -25,6 +23,7 @@ int main()
 		{
 			std::cout << "SEARCH has been selected" << std::endl;
 			book.listContacts();
+			std::cout << "Please select a contact to view" << std::endl;
 			book.searchContacts();
 		}
 		else if (input == "EXIT")

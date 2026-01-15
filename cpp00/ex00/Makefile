@@ -20,10 +20,12 @@ $(OBJECTS_DIR)/%.o: $(SOURCE_DIR)/%.cpp
 
 clean:
 	@rm -f $(OBJECTS)
+	$(info Cleaned object files)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 	@if [ -d "$(OBJECTS_DIR)" ]; then rm -rf $(OBJECTS_DIR); fi
+	$(info Cleaned all files)
 
 re: fclean all
 
