@@ -11,7 +11,7 @@ int	main()
 	stringPTR = &string;
 	std::cout << "MEMORY ADDRESS:" << std::endl;
 	std::cout << std::setw(12) << std::left << "string" << "= "<< &string << std::endl;
-	std::cout << std::setw(12) << std::left << "pointer" << "= "<< &stringPTR << std::endl;
+	std::cout << std::setw(12) << std::left << "pointer" << "= "<< stringPTR << std::endl;
 	std::cout << std::setw(12) << std::left << "reference" << "= " << &stringREF << std::endl;
 
 	std::cout << "MEMORY CONTAINS:" << std::endl;
