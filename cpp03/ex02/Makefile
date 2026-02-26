@@ -1,6 +1,6 @@
 CC = c++
 CFLAGS =  -Wall -Werror -Wextra -std=c++11
-NAME = Scavtrap
+NAME = Fragtrap
 
 
 SOURCES		:=	ClapTrap.cpp\
