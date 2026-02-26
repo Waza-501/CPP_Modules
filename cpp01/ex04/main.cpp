@@ -28,6 +28,8 @@ void	replace_string(const std::string filename, const std::string original, cons
 		in.close();
 		return ;
 	}
+	if (original.empty() || replacement.empty())
+		return ;
 	std::string line;
 	std::string newline;
 	while (std::getline(in, line))
@@ -55,7 +57,10 @@ void	replace_string(const std::string filename, const std::string original, cons
 int	main(int argc, char **argv)
 {
 	if (argc != 4)
+	{
 		std::cout << "Please provide valid input. The expected input is filename, string 1, string 2" << std::endl;
+		return 1;
+	}
 	std::string filename = argv[1];
 	std::string	original = argv[2];
 	std::string replacement = argv[3];
