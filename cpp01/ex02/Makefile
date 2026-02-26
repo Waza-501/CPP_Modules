@@ -1,7 +1,6 @@
 CC = c++
 CFLAGS =  -Wall -Werror -Wextra -std=c++11
-NAME = brain
-
+NAME = hithisisbrain
 
 SOURCES		:= main.cpp\
 

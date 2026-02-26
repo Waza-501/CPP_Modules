@@ -2,12 +2,12 @@
 
 Harl::Harl()
 {
-
+	std::cout << "Harl created" << std::endl;
 }
 
 Harl::~Harl()
 {
-
+	std::cout << "Harl has been destroyed" << std::endl;
 }
 
 void	Harl::debug()
@@ -69,6 +69,8 @@ void	Harl::complain(std::string level)
 			break ;
 		}
 		case 4:
+		{
 			return ;
+		}
 	}
 }

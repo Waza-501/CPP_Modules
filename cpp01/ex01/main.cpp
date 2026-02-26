@@ -8,6 +8,11 @@ int	main()
 	horde = zombieHorde(size, "Zoomer");
 	for (int idx = 0; idx < size; idx++)
 		horde[idx].announce();
+	for (int idx = 0; idx < size; idx++)
+	{
+		horde[idx].setname(horde[idx].getname() + std::to_string(idx + 1));
+		horde[idx].announce();
+	}
 	delete[] horde;
 	return 0;
 }

@@ -2,6 +2,17 @@
 #include <string>
 #include <fstream>
 
+/**
+ * @brief Replaces all occurrences of a string in a file and writes to a new file
+ * 
+ * Reads the input file line by line, replaces all instances of the original string
+ * with the replacement string, and writes the result to a new file with ".replace"
+ * appended to the original filename.
+ * 
+ * @param filename The name of the input file to process
+ * @param original The string to search for and replace
+ * @param replacement The string to replace with
+ */
 void	replace_string(const std::string filename, const std::string original, const std::string replacement)
 {
 	std::ifstream	in(filename);

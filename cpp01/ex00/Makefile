@@ -2,7 +2,6 @@ CC = c++
 CFLAGS =  -Wall -Werror -Wextra -std=c++11
 NAME = brainz
 
-
 SOURCES		:=	Zombie.cpp\
 				newZombie.cpp\
 				randomChump.cpp\

@@ -2,12 +2,12 @@
 
 Harl::Harl()
 {
-
+	std::cout << "Harl created" << std::endl;
 }
 
 Harl::~Harl()
 {
-
+	std::cout << "Harl has been destroyed" << std::endl;
 }
 
 void	Harl::debug()
@@ -37,7 +37,6 @@ void	Harl::error()
 void	Harl::complain(std::string level)
 {
 	std::string	levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	void		(Harl::*funcs[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 
 	int	idx = 0;
 	for (; idx < 4; idx++)
@@ -49,19 +48,25 @@ void	Harl::complain(std::string level)
 	switch (idx)
 	{
 		case 0:
-			(this->*funcs[0])();
+		{
+			this->debug();
+		}
 		case 1:	
-			(this->*funcs[1])();
+		{
+			this->info();
+		}
 		case 2:
-			(this->*funcs[2])();
+		{
+			this->warning();
+		}
 		case 3:
 		{
-			(this->*funcs[3])();
+			this->error();
 			break ;
 		}
 		case 4:
 		{
-			std::cout << "Don't forget to hydrate!" << std::endl;
+			std::cout << "well, this is awkward..." << std::endl;
 			return ;
 		}
 	}

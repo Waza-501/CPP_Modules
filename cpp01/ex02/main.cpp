@@ -10,14 +10,14 @@ int	main()
 
 	stringPTR = &string;
 	std::cout << "MEMORY ADDRESS:" << std::endl;
-	std::cout << std::setw(12) << std::left << "string" << "= "<< &string << std::endl;
-	std::cout << std::setw(12) << std::left << "pointer" << "= "<< stringPTR << std::endl;
-	std::cout << std::setw(12) << std::left << "reference" << "= " << &stringREF << std::endl;
+	std::cout << std::setw(12) << std::left << "string = " << &string << std::endl;
+	std::cout << std::setw(12) << std::left << "pointer = " << stringPTR << std::endl;
+	std::cout << std::setw(12) << std::left << "reference = " << &stringREF << std::endl;
 
 	std::cout << "MEMORY CONTAINS:" << std::endl;
-	std::cout << std::setw(12) << std::left << string << std::endl;
-	std::cout << std::setw(12) << std::left << *stringPTR << std::endl;
-	std::cout << std::setw(12) << std::left << stringREF << std::endl;
+	std::cout << std::setw(12) << std::left << "string = " << string << std::endl;
+	std::cout << std::setw(12) << std::left << "pointer = " << *stringPTR << std::endl;
+	std::cout << std::setw(12) << std::left << "reference = "<< stringREF << std::endl;
 
 	return 0;
 }
