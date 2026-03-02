@@ -64,7 +64,7 @@ void	Harl::complain(std::string level)
 			this->error();
 			break ;
 		}
-		case 4:
+		default:
 		{
 			std::cout << "well, this is awkward..." << std::endl;
 			return ;

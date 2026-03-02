@@ -68,7 +68,7 @@ void	Harl::complain(std::string level)
 			(this->*funcs[idx])();
 			break ;
 		}
-		case 4:
+		default:
 		{
 			return ;
 		}
