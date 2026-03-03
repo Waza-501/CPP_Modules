@@ -11,6 +11,7 @@ int	main()
 {
 	ClapTrap	CL_TP;
 	ClapTrap	Clank("Cl4P_TP");
+	ClapTrap	Steve("Steve", 10, 10, 0);
 
 	CL_TP.attack("Timmy");
 	Clank.takeDamage(1);

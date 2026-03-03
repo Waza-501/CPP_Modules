@@ -12,11 +12,16 @@ ScavTrap::ScavTrap(): ClapTrap()
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
-	std::cout << "Named ScavTrap Constructor called for unit " << name << std::endl;
+	std::cout << "Named ScavTrap Constructor called" << std::endl;
 	hitpoints = 100;
 	energy = 50;
 	attackdamage = 20;
 	guardMode = false;
+}
+
+ScavTrap::ScavTrap(std::string name, int hp, int ep, int ad, bool gm): ClapTrap(name, hp, ep, ad), guardMode(gm)
+{
+	std::cout << "Filled ScavTrap Constructor called" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other): ClapTrap(other)
@@ -43,10 +48,10 @@ ScavTrap	&ScavTrap::operator=(const ScavTrap &other)
 
 void	ScavTrap::attack(const std::string target)
 {
-	if (hitpoints <= 0)
-		std::cout << "This Scavtrap unit is no longer active" << std::endl;
-	else if (energy <= 0)
-		std::cout << "This Scavtrap unit doesn't have enough energy to attack" << std::endl;
+	if (!isActive())
+		return ;
+	if (!hasEnergy())
+		return ;
 	else
 	{
 		std::cout << "Scavtrap " << name << " attacks " << target << ", causing " << attackdamage << " damage" << std::endl;

@@ -3,12 +3,17 @@
 
 ClapTrap::ClapTrap(): name("default CL4P_TP"), hitpoints(10), energy(10), attackdamage(0)
 {
-	std::cout << "Standard ClapTrap Constructor called" << std::endl;
+	std::cout << "Standard Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name): name(name), hitpoints(10), energy(10), attackdamage(0)
 {
-	std::cout << "Named ClapTrapConstructor called for unit " << name << std::endl;
+	std::cout << "Named Constructor called for unit " << name << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name, int hp, int ep, int ad): name(name), hitpoints(hp), energy(ep), attackdamage(ad)
+{
+	std::cout << "Filled Constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other): name(other.name), hitpoints(other.hitpoints), energy(other.energy), attackdamage(other.attackdamage)
@@ -18,19 +23,18 @@ ClapTrap::ClapTrap(const ClapTrap& other): name(other.name), hitpoints(other.hit
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Standard ClapTrap Destructor called" << std::endl;
+	std::cout << "Standard Destructor called" << std::endl;
 }
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &other)
 {
+	if (this == &other)
+		return (*this);
 	std::cout << "Copy assignment operator called" << std::endl;
-	if (this != &other)
-	{
-		name = other.name;
-		hitpoints = other.hitpoints;
-		energy = other.energy;
-		attackdamage = other.attackdamage;
-	}
+	name = other.name;
+	hitpoints = other.hitpoints;
+	energy = other.energy;
+	attackdamage = other.attackdamage;
 	return (*this);
 }
 
@@ -54,40 +58,51 @@ int	ClapTrap::getAttackDamage(void) const
 	return(attackdamage);
 }
 
-void	ClapTrap::attack(const std::string target)
+bool	ClapTrap::isActive(void)
 {
 	if (hitpoints <= 0)
-		std::cout << "This Claptrap unit is no longer active" << std::endl;
-	else if (energy <= 0)
-		std::cout << "This Claptrap unit doesn't have enough energy to attack" << std::endl;
-	else
 	{
-		std::cout << "Claptrap " << name << " attacks " << target << ", causing " << attackdamage << " damage" << std::endl;
-		energy--;
+		std::cout << "Unit " << name << " is out of action" << std::endl;
+		return false;
 	}
+	return true;
+}
+
+bool	ClapTrap::hasEnergy(void)
+{
+	if (energy <= 0)
+	{
+		std::cout << "Unit " << name << " doesn't have enough energy to perform this action" << std::endl;
+		return false;
+	}
+	return true;
+}
+
+void	ClapTrap::attack(const std::string target)
+{
+	if (!isActive())
+		return ;
+	if (!hasEnergy())
+		return ;
+	std::cout << "Claptrap " << name << " attacks " << target << ", causing " << attackdamage << " damage" << std::endl;
+	energy--;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	if (hitpoints <= 0)
-		std::cout << "This Claptrap unit is already out of action" << std::endl;
-	else
-	{
-		std::cout << "Claptrap " << name << " takes damage, losing " << amount << " hp" << std::endl;
-		hitpoints -= amount;
-	}
+	if (!isActive())
+		return ;
+	std::cout << "Claptrap " << name << " takes damage, losing " << amount << " hp" << std::endl;
+	hitpoints -= amount;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	if (hitpoints <= 0)
-		std::cout << "This Claptrap unit is already out of action" << std::endl;
-	else if (energy <= 0)
-		std::cout << "This Claptrap unit has no energy left" << std::endl;
-	else
-	{
-		std::cout << "Claptrap " << name << " repairs itself, gaining " << amount << " hp" << std::endl;
-		hitpoints += amount;
-		energy--;
-	}
+	if (!isActive())
+		return ;
+	if (!hasEnergy())
+		return ;
+	std::cout << "Claptrap " << name << " repairs itself, gaining " << amount << " hp" << std::endl;
+	hitpoints += amount;
+	energy--;
 }

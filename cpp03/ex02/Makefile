@@ -1,9 +1,10 @@
 CC = c++
-CFLAGS =  -Wall -Werror -Wextra -std=c++11
+CFLAGS =  -Wall -Werror -Wextra std=c++11
 NAME = Fragtrap
 
 
 SOURCES		:=	ClapTrap.cpp\
+				FragTrap.cpp\
 				main.cpp\
 				ScavTrap.cpp\
 
