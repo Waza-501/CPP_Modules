@@ -1,9 +1,11 @@
 #include <iostream>
+#include "Colours.hpp"
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(): ClapTrap()
 {
-	std::cout << "Default FragTrap Constructor called" << std::endl;
+	std::cout << GREEN << "Default FragTrap Constructor called" << RESET << std::endl;
+	name = "DEFAULT_FRAGTRAP";
 	hitpoints = 100;
 	energy = 100;
 	attackdamage = 30;
@@ -11,7 +13,7 @@ FragTrap::FragTrap(): ClapTrap()
 
 FragTrap::FragTrap(std::string name): ClapTrap(name)
 {
-	std::cout << "Named FragTrap Constructor called for unit " << name << std::endl;
+	std::cout << GREEN << "Named FragTrap Constructor called for unit " << name << RESET << std::endl;
 	hitpoints = 100;
 	energy = 100;
 	attackdamage = 30;
@@ -19,29 +21,21 @@ FragTrap::FragTrap(std::string name): ClapTrap(name)
 
 FragTrap::FragTrap(const FragTrap& other): ClapTrap(other)
 {
-	std::cout << "FragTrap Copy Constructor called" << std::endl;
+	std::cout << GREEN << "FragTrap Copy Constructor called" << RESET << std::endl;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "Standard FragTrap Destructor called" << std::endl;
+	std::cout << RED << "Standard FragTrap Destructor called" << RESET << std::endl;
 }
 
 FragTrap	&FragTrap::operator=(const FragTrap &other)
 {
-	std::cout << "Fragtrap copy assignment operator called" << std::endl;
+	std::cout << "Fragtrap copy assignment operator called" << RESET << std::endl;
 	return (*this);
 }
 
-void	FragTrap::attack(const std::string target)
+void	FragTrap::highFivesGuys(void)
 {
-	if (hitpoints <= 0)
-		std::cout << "This Fragtrap unit is no longer active" << std::endl;
-	else if (energy <= 0)
-		std::cout << "This Fragtrap unit doesn't have enough energy to attack" << std::endl;
-	else
-	{
-		std::cout << "Fragtrap " << name << " attacks " << target << ", causing " << attackdamage << " damage" << std::endl;
-		energy--;
-	}
+
 }

@@ -1,9 +1,10 @@
 #include <iostream>
+#include "Colours.hpp"
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(): ClapTrap()
 {
-	std::cout << "Default ScavTrap Constructor called" << std::endl;
+	std::cout << GREEN << "Default ScavTrap Constructor called" << RESET << std::endl;
 	hitpoints = 100;
 	energy = 50;
 	attackdamage = 20;
@@ -12,7 +13,7 @@ ScavTrap::ScavTrap(): ClapTrap()
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 {
-	std::cout << "Named ScavTrap Constructor called" << std::endl;
+	std::cout << GREEN << "Named ScavTrap Constructor called" << RESET << std::endl;
 	hitpoints = 100;
 	energy = 50;
 	attackdamage = 20;
@@ -21,18 +22,18 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 
 ScavTrap::ScavTrap(std::string name, int hp, int ep, int ad, bool gm): ClapTrap(name, hp, ep, ad), guardMode(gm)
 {
-	std::cout << "Filled ScavTrap Constructor called" << std::endl;
+	std::cout << GREEN << "Filled ScavTrap Constructor called" << RESET << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& other): ClapTrap(other)
 {
-	std::cout << "ScavTrap Copy Constructor called" << std::endl;
+	std::cout << GREEN << "ScavTrap Copy Constructor called" << RESET << std::endl;
 	guardMode = other.guardMode;
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "Standard ScavTrap Destructor called" << std::endl;
+	std::cout << RED << "Standard ScavTrap Destructor called" << RESET << std::endl;
 }
 
 ScavTrap	&ScavTrap::operator=(const ScavTrap &other)

@@ -9,7 +9,7 @@ void	printStats(const ClapTrap& target, const char *colour)
 
 void	printStatsScav(const ScavTrap& target, const char *colour)
 {
-	printStats(target);
+	printStats(target, colour);
 	std::cout << colour << target.getName() << YELLOW << (target.guardModeInfo() ? " is guarding a gate." : " is not guarding a gate.") << RESET << std::endl;
 }
 
@@ -18,14 +18,17 @@ int	main()
 	ClapTrap	Clank("Cl4P_TP");
 	ScavTrap	Scav("Blue guy");
 
-	printStatsScav(Scav, RED);
-	printStats(Clank, BLUE);
+	printStatsScav(Scav, BLUE);
+	printStats(Clank, RED);
 	Scav.guardGate();
 	Scav.attack("Yellow guy");
 	Scav.takeDamage(90);
+	ScavTrap DamagedDan(Scav);
 	Scav.beRepaired(50);
 	Scav.attack("Yellow guy");
 	Scav.attack("Lilith");
-	printStatsScav(Scav);
+	Scav.guardGate();
+	printStatsScav(Scav, BLUE);
+	printStatsScav(DamagedDan, GREEN);
 	return (0);
 }
