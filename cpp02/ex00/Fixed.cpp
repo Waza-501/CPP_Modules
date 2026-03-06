@@ -14,7 +14,8 @@ Fixed::Fixed(const Fixed &other): value(other.value)
 Fixed	&Fixed::operator=(const Fixed &other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->value = other.value;
+	if (this != &other)
+		this->value = other.value;
 	return (*this);
 }
 

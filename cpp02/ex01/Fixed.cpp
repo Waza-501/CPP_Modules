@@ -27,7 +27,8 @@ Fixed::Fixed(const Fixed &other): value(other.value)
 Fixed	&Fixed::operator=(const Fixed &other)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->value = other.value;
+	if (this != &other)
+		this->value = other.value;
 	return (*this);
 }
 
@@ -36,11 +37,13 @@ Fixed::~Fixed()
 	std::cout << "Default destructor called" << std::endl;
 }
 
+// Converts fixed-point value to integer by right-shifting
 int	Fixed::toInt(void) const
 {
 	return (value >> bits);
 }
 
+// Converts fixed-point value to float by dividing by 2^bits
 float	Fixed::toFloat(void) const
 {
 	return ((value / float (1 << bits)));
@@ -49,13 +52,13 @@ float	Fixed::toFloat(void) const
 int	Fixed::getRawBits() const
 {
 	std::cout << "getRawBits member function called" << std::endl;
-	return value;
+	return value >> bits;
 }
 
 void	Fixed::setRawBits(int const raw)
 {
 	std::cout << "setRawBits member function called" << std::endl;
-	value = raw;
+	value = raw << bits;
 }
 
 std::ostream	&operator<<(std::ostream &out, const Fixed &other)
