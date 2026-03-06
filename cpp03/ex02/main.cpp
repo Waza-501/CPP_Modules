@@ -1,26 +1,25 @@
 #include "ScavTrap.hpp"
+#include "Colours.hpp"
 #include <iostream>
 
-
-void	printStats(const ClapTrap& target)
+void	printStats(const ClapTrap& target, const char *colour)
 {
-	std::cout << "Stats for " << target.getName() << ": Hitpoints = " << target.getHitpoints() << " : Energy = " << target.getEnergy() << std::endl; 
+	std::cout << YELLOW << "stats for " << colour <<target.getName() << YELLOW << ": Hitpoints = " << target.getHitpoints() << " : Energy = " << target.getEnergy() << RESET << std::endl; 
 }
 
-void	printStatsScav(const ScavTrap& target)
+void	printStatsScav(const ScavTrap& target, const char *colour)
 {
 	printStats(target);
-	std::cout << target.getName() << (target.guardModeInfo() ? " is guarding a gate." : " is not guarding a gate.") << std::endl;
+	std::cout << colour << target.getName() << YELLOW << (target.guardModeInfo() ? " is guarding a gate." : " is not guarding a gate.") << RESET << std::endl;
 }
 
 int	main()
 {
-	ClapTrap	CL_TP;
 	ClapTrap	Clank("Cl4P_TP");
 	ScavTrap	Scav("Blue guy");
 
-	CL_TP.attack("Timmy");
-	printStatsScav(Scav);
+	printStatsScav(Scav, RED);
+	printStats(Clank, BLUE);
 	Scav.guardGate();
 	Scav.attack("Yellow guy");
 	Scav.takeDamage(90);
