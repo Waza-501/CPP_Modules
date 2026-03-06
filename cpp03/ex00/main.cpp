@@ -1,10 +1,10 @@
 #include "ClapTrap.hpp"
+#include "Colours.hpp"
 #include <iostream>
 
-
-void	printStats(const ClapTrap& target)
+void	printStats(const ClapTrap& target, const char *colour)
 {
-	std::cout << "stats for " << target.getName() << ": Hitpoints = " << target.getHitpoints() << " : Energy = " << target.getEnergy() << std::endl; 
+	std::cout << YELLOW << "stats for " << colour <<target.getName() << YELLOW << ": Hitpoints = " << target.getHitpoints() << " : Energy = " << target.getEnergy() << RESET << std::endl; 
 }
 
 int	main()
@@ -17,21 +17,28 @@ int	main()
 	Clank.takeDamage(1);
 	Clank.takeDamage(1);
 	Clank.takeDamage(4);
-	printStats(Clank);
+	printStats(Clank, BLUE);
 	Clank.beRepaired(6);
 	Clank.beRepaired(10);
 	Clank.beRepaired(0);
 	Clank.beRepaired(10);
 	Clank.beRepaired(10);
 	Clank.attack("Charles");
+	printStats(Clank, BLUE);
 	Clank.beRepaired(10);
+	printStats(Clank, BLUE);
 	Clank.beRepaired(10);
+	printStats(Clank, BLUE);
 	Clank.beRepaired(10);
+	printStats(Clank, BLUE);
 	Clank.beRepaired(10);
+	printStats(Clank, BLUE);
 	Clank.beRepaired(10);
-	printStats(Clank);
+	printStats(Clank, BLUE);
+	ClapTrap Clunk(Clank);
 	Clank.takeDamage(90);
 	Clank.beRepaired(10);
-	printStats(Clank);
+	printStats(Clank, BLUE);
+	printStats(Clunk, MAGENTA);
 	return (0);
 }

@@ -1,29 +1,30 @@
 #include "ClapTrap.hpp"
+#include "Colours.hpp"
 #include <iostream>
 
 ClapTrap::ClapTrap(): name("default CL4P_TP"), hitpoints(10), energy(10), attackdamage(0)
 {
-	std::cout << "Standard Constructor called" << std::endl;
+	std::cout << GREEN << "Standard Constructor called" << RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name): name(name), hitpoints(10), energy(10), attackdamage(0)
 {
-	std::cout << "Named Constructor called for unit " << name << std::endl;
+	std::cout << GREEN << "Named Constructor called for unit " << name << RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name, int hp, int ep, int ad): name(name), hitpoints(hp), energy(ep), attackdamage(ad)
 {
-	std::cout << "Filled Constructor called" << std::endl;
+	std::cout << GREEN << "Filled Constructor called" << RESET << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other): name(other.name), hitpoints(other.hitpoints), energy(other.energy), attackdamage(other.attackdamage)
 {
-	std::cout << "Copy Constructor called" << std::endl;
+	std::cout << GREEN << "Copy Constructor called" << RESET << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Standard Destructor called" << std::endl;
+	std::cout << RED << "Standard Destructor called" << RESET << std::endl;
 }
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &other)
@@ -62,7 +63,7 @@ bool	ClapTrap::isActive(void)
 {
 	if (hitpoints <= 0)
 	{
-		std::cout << "Unit " << name << " is out of action" << std::endl;
+		std::cout << "Claptrap unit " << name << " is out of action" << std::endl;
 		return false;
 	}
 	return true;
@@ -72,7 +73,7 @@ bool	ClapTrap::hasEnergy(void)
 {
 	if (energy <= 0)
 	{
-		std::cout << "Unit " << name << " doesn't have enough energy to perform this action" << std::endl;
+		std::cout << "Claptrap unit " << name << " doesn't have enough energy to perform this action" << std::endl;
 		return false;
 	}
 	return true;
