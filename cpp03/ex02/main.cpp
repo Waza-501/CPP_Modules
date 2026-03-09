@@ -18,7 +18,7 @@ int	main()
 {
 	ClapTrap	Clank("Cl4P_TP");
 	ScavTrap	Scav("Blue guy");
-	FragTrap	Clappy("Fraggy Trappy");
+	FragTrap	Clappy("Frag Trap");
 
 	printStatsScav(Scav, RED);
 	printStats(Clank, BLUE);
@@ -28,7 +28,8 @@ int	main()
 	Scav.takeDamage(90);
 	Scav.beRepaired(50);
 	Scav.attack("Yellow guy");
-	Scav.attack("Lilith");
+	Clappy.attack("Lilith");
 	printStatsScav(Scav, RED);
+	Clappy.highFivesGuys();
 	return (0);
 }

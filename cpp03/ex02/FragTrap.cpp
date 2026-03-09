@@ -32,10 +32,14 @@ FragTrap::~FragTrap()
 FragTrap	&FragTrap::operator=(const FragTrap &other)
 {
 	std::cout << "Fragtrap copy assignment operator called" << RESET << std::endl;
+	if (this != &other)
+		ClapTrap::operator=(other);
 	return (*this);
 }
 
 void	FragTrap::highFivesGuys(void)
 {
-
+	if (!isActive())
+		return ;
+	std::cout << name << ": Hey Minion, gimme five!" << std::endl;
 }
