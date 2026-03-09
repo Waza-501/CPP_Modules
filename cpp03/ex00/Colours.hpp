@@ -1,5 +1,5 @@
-#ifndef COLOURS_HPP
-# define COLOURS_HPP
+#ifndef COLOURS_H
+# define COLOURS_H
 
 #define RESET   "\033[0m"
 #define RED     "\033[31m"
