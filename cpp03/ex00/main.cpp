@@ -21,17 +21,10 @@ int	main()
 	Clank.beRepaired(6);
 	Clank.beRepaired(10);
 	Clank.beRepaired(0);
-	Clank.beRepaired(10);
-	Clank.beRepaired(10);
 	Clank.attack("Charles");
 	printStats(Clank, BLUE);
-	Clank.beRepaired(10);
-	printStats(Clank, BLUE);
-	Clank.beRepaired(10);
-	printStats(Clank, BLUE);
-	Clank.beRepaired(10);
-	printStats(Clank, BLUE);
-	Clank.beRepaired(10);
+	for (int i = 0; i < 6; i++)
+		Clank.beRepaired(10);
 	printStats(Clank, BLUE);
 	Clank.beRepaired(10);
 	printStats(Clank, BLUE);

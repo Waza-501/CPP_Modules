@@ -67,7 +67,7 @@ void	ScavTrap::guardGate(void)
 	if (!hasEnergy())
 		return ;
 	guardMode = !guardMode;
-	std::cout << "Scavtrap " << name << (guardMode ? "is now guarding " : "is no longer guarding ") << "the gate" << std::endl;
+	std::cout << "Scavtrap " << name << (guardMode ? " is now guarding " : "is no longer guarding ") << "the gate" << std::endl;
 	// if (guardMode == false)
 	// {
 	// 	std::cout << "ScavTrap " << name << " is now guarding the gate." << std::endl;

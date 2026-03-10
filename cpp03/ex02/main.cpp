@@ -17,19 +17,15 @@ void	printStatsScav(const ScavTrap& target, const char *colour)
 int	main()
 {
 	ClapTrap	Clank("Cl4P_TP");
-	ScavTrap	Scav("Blue guy");
-	FragTrap	Clappy("Frag Trap");
+	FragTrap	Clappy("FragTrap");
 
-	printStatsScav(Scav, RED);
-	printStats(Clank, BLUE);
+	printStats(Clank, RED);
 	printStats(Clappy, GREEN);
-	Scav.guardGate();
-	Scav.attack("Yellow guy");
-	Scav.takeDamage(90);
-	Scav.beRepaired(50);
-	Scav.attack("Yellow guy");
+	Clappy.takeDamage(90);
+	Clappy.beRepaired(50);
+	Clappy.attack("Yellow guy");
 	Clappy.attack("Lilith");
-	printStatsScav(Scav, RED);
 	Clappy.highFivesGuys();
+	printStats(Clappy, GREEN);
 	return (0);
 }
