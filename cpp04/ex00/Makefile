@@ -2,9 +2,13 @@ CC = c++
 CFLAGS =  -Wall -Werror -Wextra
 NAME = Animal
 
-
-SOURCES		:=	.cpp\
+SOURCES		:=	Animal.cpp\
+				Cat.cpp\
+				Dog.cpp\
+				Elephant.cpp\
 				main.cpp\
+				WrongAnimal.cpp\
+				WrongCat.cpp\
 
 SOURCE_DIR	:= ./
 OBJECTS_DIR	:= objects

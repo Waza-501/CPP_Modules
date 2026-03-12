@@ -1,9 +1,10 @@
 CC = c++
 CFLAGS =  -Wall -Werror -Wextra
-NAME = ClapTrap
+NAME = Animal
 
-
-SOURCES		:=	ClapTrap.cpp\
+SOURCES		:=	Animal.cpp\
+				Cat.cpp\
+				Dog.cpp\
 				main.cpp\
 
 SOURCE_DIR	:= ./
