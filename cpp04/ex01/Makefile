@@ -3,6 +3,7 @@ CFLAGS =  -Wall -Werror -Wextra
 NAME = Animal
 
 SOURCES		:=	Animal.cpp\
+				Brain.cpp\
 				Cat.cpp\
 				Dog.cpp\
 				main.cpp\

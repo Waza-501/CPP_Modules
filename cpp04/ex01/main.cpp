@@ -5,17 +5,18 @@
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
+	const Animal*	meta[12];
+	bool			type = true;
 
-	delete meta;
-	delete j;
-	delete i;
+	for (int i = 0; i < 12; i++)
+	{
+		meta[i] = (type ? (Animal *)new Cat() : new Dog());
+		type = !type;
+	}
+	for (int i = 0; i < 12; i++)
+		std::cout << meta[i]->getType() << " in spot " << i << std::endl;
+	//meta[0]
+	for (int i = 0; i < 12; i++) 
+		delete meta[i];
 	return 0;
 }
