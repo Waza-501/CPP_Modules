@@ -15,7 +15,6 @@ int main()
 	}
 	for (int i = 0; i < 12; i++)
 		std::cout << meta[i]->getType() << " in spot " << i << std::endl;
-	//meta[0]
 	for (int i = 0; i < 12; i++) 
 		delete meta[i];
 	return 0;

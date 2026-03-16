@@ -1,19 +1,20 @@
 #include "Animal.hpp"
+#include "Colours.hpp"
 #include <iostream>
 
 Animal::Animal(): type("unknown")
 {
-	std::cout << "Standard Animal constructor called" << std::endl;
+	std::cout << YELLOW << "Standard Animal constructor called" << RESET << std::endl;
 }
 
 Animal::Animal(std::string type): type(type)
 {
-	std::cout << "Standard Animal constructor called" << std::endl;
+	std::cout << YELLOW << "Standard Animal constructor called" << RESET << std::endl;
 }
 
 Animal::Animal(const Animal& other): type(other.type)
 {
-	std::cout << "Animal copy constructor called" << std::endl;
+	std::cout << YELLOW << "Animal copy constructor called" << RESET << std::endl;
 }
 
 Animal	&Animal::operator=(const Animal &other)
@@ -27,7 +28,7 @@ Animal	&Animal::operator=(const Animal &other)
 
 Animal::~Animal()
 {
-	std::cout << "Standard Animal destructor called" << std::endl;
+	std::cout << RED << "Standard Animal destructor called" << RESET << std::endl;
 }
 
 std::string Animal::getType() const

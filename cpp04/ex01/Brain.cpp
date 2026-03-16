@@ -1,16 +1,17 @@
 #include <iostream>
 #include "Brain.hpp"
+#include "Colours.hpp"
 
 Brain::Brain()
 {
-	std::cout << "Standard Brain constructor called" << std::endl;
+	std::cout << CYAN << "Standard Brain constructor called" << RESET << std::endl;
 	for (int i = 0; i < 100; i++)
 		thoughts[i] = "";
 }
 
 Brain::Brain(const Brain& other)
 {
-	std::cout << "Brain copy constructor called" << std::endl;
+	std::cout << CYAN << "Brain copy constructor called" << RESET << std::endl;
 	for (int i = 0; i < 100; i++)
 		thoughts[i] = other.thoughts[i];
 }
@@ -27,7 +28,7 @@ Brain	&Brain::operator=(const Brain &other)
 
 Brain::~Brain()
 {
-	std::cout << "Standard Brain destructor called" << std::endl;
+	std::cout << CYAN << "Standard Brain destructor called" << RESET << std::endl;
 }
 
 std::string	*Brain::getThoughts(void)
