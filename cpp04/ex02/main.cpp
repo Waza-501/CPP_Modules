@@ -6,14 +6,8 @@
 int main()
 {
 	const Cat*	Timmy = new Cat();
-	try
-	{
-		const Animal*	Test = new Animal();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	std::cout << Timmy->getType() << std::endl;
+	// const Animal* Charlie = new Animal();
 	delete Timmy;
 	return 0;
 }
