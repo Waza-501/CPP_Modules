@@ -17,5 +17,21 @@ int main()
 		std::cout << meta[i]->getType() << " in spot " << i << std::endl;
 	for (int i = 0; i < 12; i++) 
 		delete meta[i];
+	Cat*	Meowth = new Cat();
+	Cat*	Tom = new Cat();
+
+	Meowth->setBrain("Meow meow meow, lets fill this brain with some thoughts");
+	Meowth->setBrain("Second thought. You get the idea");
+	Meowth->setBrain("Now we are cooking");
+	Tom->setBrain("Head empty");
+	Tom->setBrain("(Dog &)*dog = (Dog &)*cat");
+	Meowth->printBrain();
+	Tom->printBrain();
+	*Tom = *Meowth;
+	Meowth->printBrain();
+	Tom->printBrain();
+	delete Meowth;
+	Tom->printBrain();
+	delete Tom;
 	return 0;
 }
