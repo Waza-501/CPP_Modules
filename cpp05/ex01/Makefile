@@ -2,7 +2,9 @@ CC = c++
 CFLAGS =  -Wall -Werror -Wextra
 NAME = Bureaucrat
 
-SOURCES		:=	main.cpp\
+SOURCES		:=	Bureaucrat.cpp\
+				Form.cpp\
+				main.cpp\
 
 SOURCE_DIR	:= ./
 OBJECTS_DIR	:= objects
