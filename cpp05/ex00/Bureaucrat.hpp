@@ -4,21 +4,12 @@
 #include <string>
 #include <exception>
 
-class GradeTooHighException : public std::exception
-{
-
-};
-
-class GradeTooLowException : public std::exception
-{
-
-};
 
 class Bureaucrat
 {
 	private:
-		const std::string	name;
-		int					grade;
+		const std::string	_name;
+		int					_grade;
 	public:
 		Bureaucrat(std::string name, int grade);
 		Bureaucrat(const Bureaucrat& other);
@@ -26,6 +17,22 @@ class Bureaucrat
 		~Bureaucrat();
 		void	setGrade(int number);
 		int		getGrade() const;
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				const char *what() const throw()
+				{
+					return ("Grade is too high");
+				}
+		};
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				const char *what() const throw()
+				{
+					return ("Grade is too low");
+				}
+		};
 };
 
 #endif
