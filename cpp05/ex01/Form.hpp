@@ -9,11 +9,11 @@ class Form
 {
 	private:
 		const std::string	_name;
-		bool				_signed;
+		bool				_signed{false};
 		const	int			_tosign;
 		const	int			_toexecute;
 	public:
-		Form(std::string name, int grade);
+		Form(std::string name, int tosign, int toexecute);
 		Form(const Form& other);
 		Form& operator=(const Form& others);
 		~Form();
